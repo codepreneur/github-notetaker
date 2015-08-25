@@ -108,7 +108,7 @@ class Main extends React.Component{
         <TouchableHighlight
           style={styles.button}  
           onPress={this.handleSubmit.bind(this)}
-          underlayColor="white">
+          underlayColor='white'>
             <Text style={styles.buttonText}> SEARCH </Text>
         </TouchableHighlight>   
         <ActivityIndicatorIOS

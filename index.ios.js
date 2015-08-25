@@ -18,7 +18,7 @@ var {
 var styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1111111'
+    backgroundColor: '#111111'
   }
 });
 
