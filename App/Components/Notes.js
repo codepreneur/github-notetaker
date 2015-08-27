@@ -52,7 +52,7 @@ class Notes extends React.Component{
     this.state = {
       dataSource: this.ds.cloneWithRows(this.props.notes),
       note: '',
-      error
+      error: ''
     }
   }
   handleChange(e) {
@@ -71,7 +71,7 @@ class Notes extends React.Component{
           .then((data) => {
             this.setState({
               dataSource: this.ds.cloneWithRows(data)
-            });
+            })
           });
       }).catch((err) => {
         console.log('Request failed: ', err);
@@ -99,20 +99,22 @@ class Notes extends React.Component{
         <TouchableHighlight
           style={styles.button}
           onPress={this.handleSubmit.bind(this)}
-          underlayColor="#88DF4F5">
+          underlayColor="#88F4F5">
             <Text style={styles.buttonText}> Submit </Text>
-        </TouchableHighlight  
+        </TouchableHighlight>  
       </View>
     )
   }
   render() {
-    <View style={styles.container}> 
-      <ListView 
-        dataSource={this.state.dataSource}
-        render={this.renderRow}
-        renderHeader={() => <Badge userInfo={this.props.userInfo} />} />
-      {this.footer()}
-    </View>
+    return (
+      <View style={styles.container}> 
+        <ListView 
+          dataSource={this.state.dataSource}
+          renderRow={this.renderRow}
+          renderHeader={() => <Badge userInfo={this.props.userInfo} />} />
+        {this.footer()}
+      </View>
+    )
   }
 };
 
